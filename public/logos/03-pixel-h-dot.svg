@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <g fill="#ffffff">
+    <!-- Same chunky h shape but each pixel is a circle (LED display feel) -->
+    <circle cx="11.5" cy="11.5" r="3.5" />
+    <circle cx="11.5" cy="19.5" r="3.5" />
+    <circle cx="11.5" cy="27.5" r="3.5" />
+    <circle cx="11.5" cy="35.5" r="3.5" />
+    <circle cx="11.5" cy="43.5" r="3.5" />
+    <circle cx="11.5" cy="51.5" r="3.5" />
+    <circle cx="11.5" cy="59.5" r="3.5" />
+    <circle cx="19.5" cy="11.5" r="3.5" />
+    <circle cx="19.5" cy="19.5" r="3.5" />
+    <circle cx="19.5" cy="27.5" r="3.5" />
+    <circle cx="19.5" cy="35.5" r="3.5" />
+    <circle cx="19.5" cy="43.5" r="3.5" />
+    <circle cx="19.5" cy="51.5" r="3.5" />
+    <circle cx="19.5" cy="59.5" r="3.5" />
+    <circle cx="27.5" cy="35.5" r="3.5" />
+    <circle cx="35.5" cy="35.5" r="3.5" />
+    <circle cx="43.5" cy="35.5" r="3.5" />
+    <circle cx="43.5" cy="43.5" r="3.5" />
+    <circle cx="43.5" cy="51.5" r="3.5" />
+    <circle cx="43.5" cy="59.5" r="3.5" />
+    <circle cx="51.5" cy="35.5" r="3.5" />
+    <circle cx="51.5" cy="43.5" r="3.5" />
+    <circle cx="51.5" cy="51.5" r="3.5" />
+    <circle cx="51.5" cy="59.5" r="3.5" />
+  </g>
+</svg>

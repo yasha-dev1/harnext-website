@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 64" fill="none" shape-rendering="crispEdges" aria-hidden="true">
+  <g fill="#ffffff">
+    <rect x="2"  y="20" width="6" height="6" />
+    <rect x="8"  y="26" width="6" height="6" />
+    <rect x="14" y="32" width="6" height="6" />
+    <rect x="8"  y="38" width="6" height="6" />
+    <rect x="2"  y="44" width="6" height="6" />
+    <rect x="26" y="8"  width="6" height="6" />
+    <rect x="26" y="14" width="6" height="6" />
+    <rect x="26" y="20" width="6" height="6" />
+    <rect x="26" y="26" width="6" height="6" />
+    <rect x="26" y="32" width="6" height="6" />
+    <rect x="26" y="38" width="6" height="6" />
+    <rect x="26" y="44" width="6" height="6" />
+    <rect x="26" y="50" width="6" height="6" />
+    <rect x="32" y="8"  width="6" height="6" />
+    <rect x="32" y="14" width="6" height="6" />
+    <rect x="32" y="20" width="6" height="6" />
+    <rect x="32" y="26" width="6" height="6" />
+    <rect x="32" y="32" width="6" height="6" />
+    <rect x="32" y="38" width="6" height="6" />
+    <rect x="32" y="44" width="6" height="6" />
+    <rect x="32" y="50" width="6" height="6" />
+    <rect x="44" y="26" width="6" height="6" />
+    <rect x="44" y="32" width="6" height="6" />
+    <rect x="44" y="38" width="6" height="6" />
+    <rect x="44" y="44" width="6" height="6" />
+    <rect x="44" y="50" width="6" height="6" />
+    <rect x="50" y="26" width="6" height="6" />
+    <rect x="50" y="32" width="6" height="6" />
+    <rect x="50" y="38" width="6" height="6" />
+    <rect x="50" y="44" width="6" height="6" />
+    <rect x="50" y="50" width="6" height="6" />
+  </g>
+</svg>

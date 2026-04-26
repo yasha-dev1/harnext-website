@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+:root {
+  --background: #07080b;
+  --foreground: #e7e9ee;
+  --muted: #9ba3b4;
+  --border: #1e2230;
+  --panel: #0d1018;
+  --panel-2: #11151f;
+  --accent-cyan: #22d3ee;
+  --accent-purple: #7c3aed;
+  --accent-pink: #f472b6;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html,
+body {
+  font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+body {
+  background:
+    radial-gradient(1100px 600px at 80% -10%, rgba(124, 58, 237, 0.18), transparent 60%),
+    radial-gradient(900px 500px at -10% 10%, rgba(34, 211, 238, 0.14), transparent 60%),
+    var(--background);
+  background-attachment: fixed;
+}
+
+.text-gradient {
+  background: linear-gradient(120deg, #22d3ee 0%, #7c3aed 50%, #f472b6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+  border: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+}
+
+.code-block {
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.divider-line {
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  height: 1px;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50%      { opacity: 1;   transform: scale(1.15); }
+}
+.pulse-dot { animation: pulse-dot 2.4s ease-in-out infinite; }
+
+/* === harnext flow animation =====================================
+   One synchronized 14s loop. Each element uses the same duration
+   with shared keyframes; per-element appearance is offset by
+   varying its keyframe percentages.
+================================================================== */
+
+:root {
+  --hf-cycle: 14s;
+  --hf-stage-pending-bg: rgba(255, 255, 255, 0.04);
+  --hf-stage-pending-fg: #6b7280;
+  --hf-stage-pending-border: rgba(255, 255, 255, 0.08);
+}
+
+.hf-stage {
+  background: var(--hf-stage-pending-bg);
+  color: var(--hf-stage-pending-fg);
+  border: 1px solid var(--hf-stage-pending-border);
+  transition: none;
+}
+
+@keyframes hf-fade {
+  0%, 1%   { opacity: 0; transform: translateY(6px); }
+  4%, 96%  { opacity: 1; transform: translateY(0); }
+  100%     { opacity: 0; transform: translateY(0); }
+}
+@keyframes hf-fade-d10 { /* triggers ~10% in */
+  0%, 9%   { opacity: 0; transform: translateY(6px); }
+  12%, 96% { opacity: 1; transform: translateY(0); }
+  100%     { opacity: 0; }
+}
+@keyframes hf-fade-d22 {
+  0%, 21%  { opacity: 0; transform: translateY(6px); }
+  24%, 96% { opacity: 1; transform: translateY(0); }
+  100%     { opacity: 0; }
+}
+@keyframes hf-fade-d40 {
+  0%, 39%  { opacity: 0; transform: translateY(6px); }
+  42%, 96% { opacity: 1; transform: translateY(0); }
+  100%     { opacity: 0; }
+}
+@keyframes hf-fade-d56 {
+  0%, 55%  { opacity: 0; transform: translateY(8px) scale(0.98); }
+  58%, 96% { opacity: 1; transform: translateY(0)   scale(1); }
+  100%     { opacity: 0; }
+}
+@keyframes hf-fade-d72 {
+  0%, 71%  { opacity: 0; transform: translateY(6px); }
+  74%, 96% { opacity: 1; transform: translateY(0); }
+  100%     { opacity: 0; }
+}
+
+/* Stage pill activation: pending grey -> colored, with glow. */
+@keyframes hf-stage-triage {
+  0%, 8%    { background: var(--hf-stage-pending-bg); color: var(--hf-stage-pending-fg); border-color: var(--hf-stage-pending-border); box-shadow: none; }
+  12%, 96%  { background: rgba(34, 197, 94, 0.14); color: #4ade80; border-color: rgba(74, 222, 128, 0.4); box-shadow: 0 0 22px -4px rgba(34, 197, 94, 0.45); }
+  100%      { background: var(--hf-stage-pending-bg); color: var(--hf-stage-pending-fg); border-color: var(--hf-stage-pending-border); }
+}
+@keyframes hf-stage-plan {
+  0%, 21%   { background: var(--hf-stage-pending-bg); color: var(--hf-stage-pending-fg); border-color: var(--hf-stage-pending-border); box-shadow: none; }
+  24%, 96%  { background: rgba(56, 189, 248, 0.14); color: #38bdf8; border-color: rgba(56, 189, 248, 0.4); box-shadow: 0 0 22px -4px rgba(56, 189, 248, 0.45); }
+  100%      { background: var(--hf-stage-pending-bg); color: var(--hf-stage-pending-fg); border-color: var(--hf-stage-pending-border); }
+}
+@keyframes hf-stage-implement {
+  0%, 39%   { background: var(--hf-stage-pending-bg); color: var(--hf-stage-pending-fg); border-color: var(--hf-stage-pending-border); box-shadow: none; }
+  42%, 96%  { background: rgba(168, 85, 247, 0.16); color: #c4b5fd; border-color: rgba(168, 85, 247, 0.4); box-shadow: 0 0 22px -4px rgba(168, 85, 247, 0.5); }
+  100%      { background: var(--hf-stage-pending-bg); color: var(--hf-stage-pending-fg); border-color: var(--hf-stage-pending-border); }
+}
+@keyframes hf-stage-pr {
+  0%, 55%   { background: var(--hf-stage-pending-bg); color: var(--hf-stage-pending-fg); border-color: var(--hf-stage-pending-border); box-shadow: none; }
+  58%, 96%  { background: rgba(244, 114, 182, 0.14); color: #f0abfc; border-color: rgba(244, 114, 182, 0.4); box-shadow: 0 0 22px -4px rgba(244, 114, 182, 0.5); }
+  100%      { background: var(--hf-stage-pending-bg); color: var(--hf-stage-pending-fg); border-color: var(--hf-stage-pending-border); }
+}
+
+/* Connector line between pills: fills with gradient as stages advance. */
+@keyframes hf-connector {
+  0%, 8%    { background: rgba(255, 255, 255, 0.08); }
+  100%      { background: linear-gradient(90deg, #4ade80, #38bdf8, #c4b5fd, #f0abfc); }
+}
+
+.hf-anim    { animation: hf-fade        var(--hf-cycle) ease-in-out infinite both; }
+.hf-d10     { animation: hf-fade-d10    var(--hf-cycle) ease-in-out infinite both; }
+.hf-d22     { animation: hf-fade-d22    var(--hf-cycle) ease-in-out infinite both; }
+.hf-d40     { animation: hf-fade-d40    var(--hf-cycle) ease-in-out infinite both; }
+.hf-d56     { animation: hf-fade-d56    var(--hf-cycle) ease-in-out infinite both; }
+.hf-d72     { animation: hf-fade-d72    var(--hf-cycle) ease-in-out infinite both; }
+
+.hf-stage-triage    { animation: hf-stage-triage    var(--hf-cycle) ease-in-out infinite both; }
+.hf-stage-plan      { animation: hf-stage-plan      var(--hf-cycle) ease-in-out infinite both; }
+.hf-stage-implement { animation: hf-stage-implement var(--hf-cycle) ease-in-out infinite both; }
+.hf-stage-pr        { animation: hf-stage-pr        var(--hf-cycle) ease-in-out infinite both; }
+
+.hf-connector {
+  background: rgba(255, 255, 255, 0.08);
+  animation: hf-connector var(--hf-cycle) linear infinite both;
+}
+
+/* Bot "thinking" dots */
+@keyframes hf-think { 0%, 80%, 100% { opacity: 0.25; } 40% { opacity: 1; } }
+.hf-think-dot { animation: hf-think 1.2s ease-in-out infinite; }
+.hf-think-dot:nth-child(2) { animation-delay: 0.15s; }
+.hf-think-dot:nth-child(3) { animation-delay: 0.3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hf-anim, .hf-d10, .hf-d22, .hf-d40, .hf-d56, .hf-d72,
+  .hf-stage-triage, .hf-stage-plan, .hf-stage-implement, .hf-stage-pr,
+  .hf-connector, .hf-think-dot, .pulse-dot {
+    animation: none !important;
+  }
+}

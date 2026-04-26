@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" shape-rendering="crispEdges">
+  <g fill="#ffffff">
+    <rect x="8"  y="8"  width="7" height="7" />
+    <rect x="8"  y="16" width="7" height="7" />
+    <rect x="8"  y="24" width="7" height="7" />
+    <rect x="8"  y="32" width="7" height="7" />
+    <rect x="8"  y="40" width="7" height="7" />
+    <rect x="8"  y="48" width="7" height="7" />
+    <rect x="8"  y="56" width="7" height="7" />
+    <rect x="16" y="8"  width="7" height="7" />
+    <rect x="16" y="16" width="7" height="7" />
+    <rect x="16" y="24" width="7" height="7" />
+    <rect x="16" y="32" width="7" height="7" />
+    <rect x="16" y="40" width="7" height="7" />
+    <rect x="16" y="48" width="7" height="7" />
+    <rect x="16" y="56" width="7" height="7" />
+    <rect x="24" y="32" width="7" height="7" />
+    <rect x="32" y="32" width="7" height="7" />
+    <rect x="40" y="32" width="7" height="7" />
+    <rect x="40" y="40" width="7" height="7" />
+    <rect x="40" y="48" width="7" height="7" />
+    <rect x="40" y="56" width="7" height="7" />
+    <rect x="48" y="32" width="7" height="7" />
+    <rect x="48" y="40" width="7" height="7" />
+    <rect x="48" y="48" width="7" height="7" />
+    <rect x="48" y="56" width="7" height="7" />
+  </g>
+</svg>
