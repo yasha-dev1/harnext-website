@@ -849,7 +849,17 @@ function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 text-sm text-[var(--muted)] sm:flex-row">
         <div className="flex items-center gap-2">
           <Image src="/logo.svg" alt="" width={21} height={22} />
-          <span>harnext · MIT · made by QualityUnit</span>
+          <span>
+            harnext · MIT · made by{" "}
+            <a
+              href="https://www.flowhunt.io"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-white"
+            >
+              FlowHunt
+            </a>
+          </span>
         </div>
         <div className="flex items-center gap-5">
           <a href={GITHUB_URL} target="_blank" rel="noreferrer" className="hover:text-white">
