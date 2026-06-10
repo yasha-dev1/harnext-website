@@ -60,7 +60,7 @@ export default function LogosPage() {
       <p className="mt-3 max-w-2xl text-[var(--muted)]">
         Eight white pixel-art and geometric explorations for the harnext mark.
         Each is shown at three sizes (24, 64, 128) on a dark panel and a light
-        panel. Pick one (or mix) and I'll wire it through the site.
+        panel. Pick one (or mix) and I&apos;ll wire it through the site.
       </p>
 
       <div className="mt-10 grid gap-5 md:grid-cols-2">

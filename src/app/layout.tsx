@@ -1,26 +1,26 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bricolage_Grotesque, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "harnext — AI coding agent with harness engineering",
+  title: "harnext × Context Engine — open-source infrastructure for AI coding agents",
   description:
-    "An interactive terminal coding agent that drives your repo through staged GitHub Actions pipelines. Read, write, edit, run shell, drive MCP — and let AI pick up issues end to end.",
+    "Two open-source tools that work as one — a terminal-native coding agent harness, and the context engine that turns every event in your org into token-efficient context.",
   metadataBase: new URL("https://harnext.dev"),
   openGraph: {
-    title: "harnext — AI coding agent with harness engineering",
+    title: "harnext × Context Engine — open-source infrastructure for AI coding agents",
     description:
-      "Terminal AI coding agent + auto-generated GitHub Actions pipelines that turn issues into PRs.",
+      "The coding agent harness + the context engine that feeds its brain. Open source, MIT licensed.",
     type: "website",
   },
 };
@@ -33,11 +33,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${bricolage.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)]">
-        {children}
-      </body>
+      <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
 }
