@@ -20,7 +20,7 @@ export default function ContextEnginePage() {
   return (
     <>
       <LogoSymbol />
-      <Nav startHref="/docs/quickstart" />
+      <Nav startHref="https://meaninggrid.harnext.dev" />
       <span id="top" />
       <main className="flex-1">
         <Hero />
