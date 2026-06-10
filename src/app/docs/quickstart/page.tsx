@@ -143,7 +143,7 @@ await followUp.run("Now add tests for the new module");`,
       />
 
       <Callout type="tip" title="Next steps">
-        Continue with the <a href="/docs/sdk">SDK overview</a> for the full
+        Continue with the <a href="/docs/sdk/overview">SDK overview</a> for the full
         client surface, or jump to <a href="/docs/sdk/tools">Tools</a> to give
         the agent custom capabilities.
       </Callout>

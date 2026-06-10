@@ -17,12 +17,14 @@ export const docsNav: NavGroup[] = [
       { title: "Introduction", href: "/docs" },
       { title: "Installation", href: "/docs/installation" },
       { title: "Quickstart", href: "/docs/quickstart" },
+      { title: "Context Engine", href: "/docs/context-engine" },
     ],
   },
   {
     title: "SDK",
     items: [
-      { title: "Overview", href: "/docs/sdk" },
+      { title: "Introduction", href: "/docs/sdk" },
+      { title: "Overview", href: "/docs/sdk/overview" },
       { title: "Client & configuration", href: "/docs/sdk/client" },
       { title: "Running the agent", href: "/docs/sdk/running-agents" },
       { title: "Tools", href: "/docs/sdk/tools" },

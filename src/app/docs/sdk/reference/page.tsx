@@ -188,7 +188,7 @@ try {
 
       <Callout type="tip" title="That's the whole surface">
         You&apos;ve now seen everything the SDK exposes. Head back to the{" "}
-        <a href="/docs/sdk">overview</a> or start building from the{" "}
+        <a href="/docs/sdk/overview">overview</a> or start building from the{" "}
         <a href="/docs/quickstart">quickstart</a>.
       </Callout>
     </DocPage>

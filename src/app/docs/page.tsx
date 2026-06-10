@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { DocPage } from "@/components/docs/doc-page";
-import { CodeTabs } from "@/components/docs/code";
+import { CodeBlock } from "@/components/docs/code";
 import { Callout, Card, CardGroup, H2 } from "@/components/docs/mdx";
 
 export const metadata: Metadata = { title: "Introduction" };
@@ -9,148 +9,106 @@ export default function Page() {
   return (
     <DocPage
       eyebrow="Get started"
-      title="Harnext SDK"
-      description="Drive the harnext coding agent from your own code. The same agent that powers the CLI — read, write, edit, run shell, drive MCP, and ship issues to PRs — available as first-class Python and TypeScript libraries."
+      title="harnext CLI"
+      description="A terminal-native coding agent that reads, writes, and edits files, runs shell, and drives MCP servers — on open-source, local, or any provider. Run it interactively, hand it a task, or let it ship unattended."
     >
       <p>
-        <strong>harnext</strong> is a minimal, provider-agnostic coding agent.
-        The CLI gives you an interactive REPL and a GitHub Actions harness; the{" "}
-        <strong>SDK</strong> gives you the same executor as a library, so you can
-        embed the agent in scripts, services, notebooks, test suites, and your
-        own automation. One agent, six tools, 20+ providers — now callable from
-        Python and TypeScript with matching APIs.
+        <strong>harnext</strong> is the whole harness in one CLI: the
+        interactive agent you use day to day, a one-shot mode for scripts and
+        automation, and the setup command that wires your repo into a staged
+        pipeline. Install it once and you have everything — no glue scripts, no
+        agent server.
       </p>
 
-      <CodeTabs
-        tabs={[
-          {
-            lang: "python",
-            label: "Python",
-            code: `from harnext import Harnext
+      <CodeBlock lang="bash" code={`npm i -g harnext`} />
 
-agent = Harnext(provider="anthropic", model="claude-opus-4-8")
+      <Callout type="note" title="Requirements">
+        Node ≥ 20. Sessions, config, and replays all live under{" "}
+        <code>~/.harnext</code>.
+      </Callout>
 
-result = agent.run("Add input validation to the signup endpoint")
-print(result.text)`,
-          },
-          {
-            lang: "ts",
-            label: "TypeScript",
-            code: `import { Harnext } from "@harnext/sdk";
+      <H2>The interactive REPL</H2>
+      <p>
+        Run <code>harnext</code> inside a repo and describe what you want. The
+        agent reads, greps, plans, edits, and runs your tests — every tool call
+        is shown as it happens, and nothing is written without the permission
+        mode you chose.
+      </p>
+      <CodeBlock
+        lang="text"
+        filename="~/projects/api — harnext"
+        code={`❯ refactor packages/api/auth — split the session helper
 
-const agent = new Harnext({ provider: "anthropic", model: "claude-opus-4-8" });
+read  packages/api/auth/session.ts · 218 lines
+grep  "createSession" · 9 matches · 4 files
+│ plan · 3 steps — extract tokens.ts, thin the helper, update imports
+edit  packages/api/auth/tokens.ts   +47 −0
+edit  packages/api/auth/session.ts  +8 −52
+bash  npm test -- auth  ✓ 23 passing · 1.2s
 
-const result = await agent.run("Add input validation to the signup endpoint");
-console.log(result.text);`,
-          },
-        ]}
+↑ 3.1k ↓ 0.9k tokens · change ready for review`}
       />
 
-      <Callout type="note" title="Same surface, two languages">
-        Every concept in this reference is documented for both SDKs side by side.
-        Python uses <code>snake_case</code>; TypeScript uses{" "}
-        <code>camelCase</code>. Where they differ beyond casing, it&apos;s called
-        out explicitly.
-      </Callout>
-
-      <H2>What you can build</H2>
+      <H2>One-shot mode</H2>
       <p>
-        The SDK exposes every capability of the agent as a typed API. Pick a
-        section to dive in:
+        Pass <code>-p</code> to run a single task and exit — ideal for scripts,
+        CI, and automation. The run is recorded as a session like any other.
       </p>
+      <CodeBlock
+        lang="bash"
+        code={`harnext -p "Add a /health route that returns 200 OK" --provider anthropic`}
+      />
 
+      <H2>Pick your provider — or bring your own</H2>
+      <p>
+        Anthropic, OpenAI, Google, Ollama, NVIDIA and 20+ more, switchable per
+        run with <code>--provider</code> and <code>--model</code>. Point{" "}
+        <code>--base-url</code> at a local or self-hosted endpoint to keep
+        development entirely in-house.
+      </p>
+      <CodeBlock
+        lang="bash"
+        code={`# cloud provider
+harnext --provider anthropic --model claude-opus-4-8
+
+# local model — code never leaves the machine
+harnext --provider ollama --model llama3.2
+
+# any OpenAI-compatible endpoint
+harnext --base-url http://localhost:8000/v1 --model my-finetune`}
+      />
+
+      <H2>Wire up your repo</H2>
+      <p>
+        <code>harnext setup</code> connects your sources to the{" "}
+        <a href="/docs/context-engine">Context Engine</a> and wires the harness
+        into your repo, so the agent runs as a staged pipeline you can hand off
+        and walk away from.
+      </p>
+      <CodeBlock
+        lang="bash"
+        code={`cd my-repo
+harnext setup
+# ✓ context engine connected · harness ready`}
+      />
+
+      <H2>Where to go next</H2>
       <CardGroup cols={2}>
-        <Card title="Run & stream" href="/docs/sdk/running-agents" icon={<RunIcon />}>
-          One-shot <code>run()</code> for results, or <code>stream()</code> for
-          token-by-token events and live tool calls.
+        <Card title="Installation" href="/docs/installation">
+          Install options, requirements, and configuring your first provider
+          key.
         </Card>
-        <Card title="Tools" href="/docs/sdk/tools" icon={<ToolIcon />}>
-          The six built-in tools — read, write, edit, bash, skill, mcp — plus
-          your own typed custom tools.
+        <Card title="Quickstart" href="/docs/quickstart">
+          Run your first task end to end in under five minutes.
         </Card>
-        <Card title="Providers & models" href="/docs/sdk/providers" icon={<PlugIcon />}>
-          Anthropic, OpenAI, Google, Ollama and 20+ more. Switch per call with a
-          single argument.
+        <Card title="Context Engine" href="/docs/context-engine">
+          Turn every event in your org into token-efficient context for the
+          agent.
         </Card>
-        <Card title="Sessions & replays" href="/docs/sdk/sessions" icon={<HistoryIcon />}>
-          Persistent, inspectable sessions in <code>~/.harnext</code>. Resume,
-          replay, and export any run.
-        </Card>
-        <Card title="Skills & MCP" href="/docs/sdk/skills" icon={<SparkIcon />}>
-          Bundle reusable skills and connect any MCP server in proxy or direct
-          mode.
-        </Card>
-        <Card title="Harness & runner" href="/docs/sdk/harness" icon={<PipeIcon />}>
-          Generate the GitHub Actions pipeline and manage a self-hosted runner —
-          all from code.
+        <Card title="SDK" href="/docs/sdk">
+          Drive the same agent from Python or TypeScript.
         </Card>
       </CardGroup>
-
-      <H2>How it fits together</H2>
-      <p>
-        A <code>Harnext</code> client wraps a provider, a working directory, and
-        a set of tools. Calling <code>run()</code> or <code>stream()</code>{" "}
-        starts an agent loop: the model thinks, calls tools, observes results,
-        and repeats until the task is done or <code>max_turns</code> is reached.
-        Every run is recorded as a session you can resume or replay. The same
-        client can also <em>build a harness</em> — emitting the GitHub Actions
-        workflows that let the agent pick up issues and open PRs unattended.
-      </p>
-
-      <Callout type="tip" title="New to harnext?">
-        Start with <a href="/docs/installation">Installation</a>, then the{" "}
-        <a href="/docs/quickstart">Quickstart</a>. If you already have the CLI,
-        the SDK ships in the same distribution — jump straight to the{" "}
-        <a href="/docs/sdk">SDK overview</a>.
-      </Callout>
     </DocPage>
-  );
-}
-
-/* --- inline card icons --- */
-function RunIcon() {
-  return (
-    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M5 3l14 9-14 9V3Z" />
-    </svg>
-  );
-}
-function ToolIcon() {
-  return (
-    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2-2 2.5-2.5Z" />
-    </svg>
-  );
-}
-function PlugIcon() {
-  return (
-    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M9 2v4M15 2v4M7 6h10v6a5 5 0 0 1-10 0V6ZM12 17v5" />
-    </svg>
-  );
-}
-function HistoryIcon() {
-  return (
-    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5M12 8v4l3 2" />
-    </svg>
-  );
-}
-function SparkIcon() {
-  return (
-    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 3l1.7 4.3L18 9l-4.3 1.7L12 15l-1.7-4.3L6 9l4.3-1.7L12 3Z" />
-    </svg>
-  );
-}
-function PipeIcon() {
-  return (
-    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="5" cy="6" r="2" />
-      <circle cx="19" cy="6" r="2" />
-      <circle cx="5" cy="18" r="2" />
-      <circle cx="19" cy="18" r="2" />
-      <path d="M7 6h10M5 8v8M19 8v8M7 18h10" />
-    </svg>
   );
 }
