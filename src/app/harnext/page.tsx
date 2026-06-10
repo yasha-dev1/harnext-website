@@ -25,10 +25,10 @@ export default function HarnextPage() {
       <span id="top" />
       <main className="flex-1">
         <Hero />
+        <OpenSource />
         <HarnextSection />
         <CompatStrip />
         <QuickStart />
-        <OpenSource />
       </main>
       <Footer />
     </>

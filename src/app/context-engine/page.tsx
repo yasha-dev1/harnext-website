@@ -24,9 +24,9 @@ export default function ContextEnginePage() {
       <span id="top" />
       <main className="flex-1">
         <Hero />
+        <OpenSource />
         <ContextEngineSection />
         <CompatStrip />
-        <OpenSource />
       </main>
       <Footer />
     </>
