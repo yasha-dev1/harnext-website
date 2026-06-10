@@ -1,37 +1,37 @@
+import type { Metadata } from "next";
 import Nav from "@/components/landing/nav";
 import Reveal from "@/components/landing/reveal";
 import { LogoSymbol } from "@/components/landing/icons";
 import {
-  HarnextPanel,
   ContextEnginePanel,
-  HarnextSection,
   ContextEngineSection,
   CompatStrip,
-  QuickStart,
   OpenSource,
   Footer,
 } from "@/components/landing/sections";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "harnext Context Engine — token-efficient context for any agent",
+  description:
+    "Every event across your org — Stripe, Slack, GitHub, Jira, LiveAgent, HubSpot, your site — streams into the Context Engine. It ranks, prunes, and caches so every agent call carries only what matters.",
+};
+
+export default function ContextEnginePage() {
   return (
     <>
       <LogoSymbol />
-      <Nav />
+      <Nav startHref="/docs/quickstart" />
       <span id="top" />
       <main className="flex-1">
         <Hero />
-        <OpenSource />
-        <HarnextSection />
         <ContextEngineSection />
         <CompatStrip />
-        <QuickStart />
+        <OpenSource />
       </main>
       <Footer />
     </>
   );
 }
-
-/* ============================ HERO ============================ */
 
 function Hero() {
   return (
@@ -40,16 +40,17 @@ function Hero() {
       <div className="container">
         <Reveal className="hero-top">
           <p className="eyebrow"><span className="sq" /> Open source · MIT licensed</p>
-          <h1>Build the harness.<br /><span className="l2">Engineer the context.</span></h1>
+          <h1>The brain<br /><span className="l2">of your agent.</span></h1>
           <p className="lede">
-            Two open-source tools that work as one — a terminal-native coding
-            agent harness, and the context engine that feeds its brain.
+            Every event across your org — Stripe, Slack, GitHub, Jira,
+            LiveAgent, HubSpot, your site — streams into the Context Engine.
+            It ranks, prunes, and caches so every agent call carries only what
+            matters.
           </p>
         </Reveal>
 
-        <div className="hero-split">
-          <HarnextPanel />
-          <ContextEnginePanel />
+        <div className="hero-split solo">
+          <ContextEnginePanel cta={{ href: "/docs", label: "Read the docs →" }} />
         </div>
       </div>
     </section>

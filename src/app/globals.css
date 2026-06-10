@@ -359,6 +359,9 @@ h1, h2, h3 { font-family: var(--font-disp); font-weight: 700; letter-spacing: -0
 .hero-top .lede { margin-top: 1.2rem; }
 
 .hero-split { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.hero-split.solo { grid-template-columns: 1fr; }
+.nav-links a.active { color: var(--fg); }
+.nav-links a.active.has-dot::before { box-shadow: 0 0 10px var(--amber-glow); }
 .hpanel { position: relative; border: 1px solid var(--line); border-radius: 20px; background: linear-gradient(180deg, var(--panel), #100f0c); padding: 24px 24px 22px; display: flex; flex-direction: column; gap: 16px; overflow: hidden; }
 .hpanel::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px; background: linear-gradient(90deg, var(--amber), transparent 72%); opacity: .75; }
 .hp-top { display: flex; gap: 14px; align-items: flex-start; }
