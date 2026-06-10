@@ -380,8 +380,9 @@ h1, h2, h3 { font-family: var(--font-disp); font-weight: 700; letter-spacing: -0
 /* ============================================================
    TRUSTED-BY STRIP (hero)
    ============================================================ */
-.trusted { margin-top: clamp(36px, 5.5vh, 56px); display: flex; flex-wrap: wrap; align-items: center; gap: 18px 36px; }
-.trusted .tlbl { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--fg-4); }
+.trusted { margin-top: clamp(36px, 5.5vh, 56px); }
+.trusted .tlbl { display: block; font-family: var(--font-mono); font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--fg-4); margin-bottom: 22px; }
+.trusted .trow { display: flex; flex-wrap: wrap; align-items: center; gap: 24px 56px; }
 .trusted a { display: inline-flex; align-items: center; }
 .trusted img { width: auto; filter: brightness(0) invert(0.92); opacity: .55; transition: opacity .2s; }
 .trusted a:hover img { opacity: .95; }

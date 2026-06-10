@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 50" fill="none">
+  <!-- Megaphone body - same style as logo-white.svg -->
+  <ellipse cx="12" cy="25" rx="6" ry="8" fill="#4F46E5"/>
+  <path d="M12 17 L38 8 L38 42 L12 33 Z" fill="#4F46E5"/>
+  <ellipse cx="38" cy="25" rx="4" ry="17" fill="#6366F1"/>
+  <!-- Sound waves -->
+  <path d="M46 19 C52 22, 52 28, 46 31" stroke="#4F46E5" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M52 14 C62 20, 62 30, 52 36" stroke="#4F46E5" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Text: Am I Cited? -->
+  <text x="68" y="33" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="700" fill="#111827">
+    <tspan fill="#4F46E5">Am I</tspan><tspan fill="#111827"> Cited?</tspan>
+  </text>
+</svg>

@@ -250,7 +250,7 @@ export function ContextEngineSection() {
               </div>
             </div>
             <div className="sec-cta">
-              <a className="btn btn-amber" href="#">Book a call</a>
+              <a className="btn btn-amber" href="https://calendly.com/liveagentsession/flowhunt-demo" target="_blank" rel="noreferrer">Book a call</a>
               <Link className="btn btn-ghost" href="/docs">Context Engine docs →</Link>
             </div>
           </div>
@@ -351,7 +351,7 @@ export function OpenSource() {
         </Reveal>
 
         <Reveal className="os-cta d2">
-          <a className="btn btn-amber" href="#">Book a call</a>
+          <a className="btn btn-amber" href="https://calendly.com/liveagentsession/flowhunt-demo" target="_blank" rel="noreferrer">Book a call</a>
           <span className="os-note">Prefer a walkthrough? We&apos;ll show you harnext + Context Engine on your stack.</span>
         </Reveal>
       </div>

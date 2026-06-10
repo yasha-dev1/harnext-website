@@ -51,7 +51,7 @@ export default function Nav({
         >
           <GithubIcon />
         </a>
-        <a className="btn btn-ghost nav-demo" href="#">Book a call</a>
+        <a className="btn btn-ghost nav-demo" href="https://calendly.com/liveagentsession/flowhunt-demo" target="_blank" rel="noreferrer">Book a call</a>
         <a className="btn btn-amber" href={startHref}>{startLabel}</a>
       </div>
     </header>
