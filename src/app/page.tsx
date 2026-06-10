@@ -1,5 +1,8 @@
 import Nav from "@/components/landing/nav";
 import Reveal from "@/components/landing/reveal";
+import TrustedBy from "@/components/landing/trusted-by";
+import NewsletterPopup from "@/components/landing/newsletter-popup";
+import { WebinarStrip } from "@/components/landing/webinar";
 import { LogoSymbol } from "@/components/landing/icons";
 import {
   HarnextPanel,
@@ -20,6 +23,7 @@ export default function Home() {
       <span id="top" />
       <main className="flex-1">
         <Hero />
+        <WebinarStrip />
         <OpenSource />
         <HarnextSection />
         <ContextEngineSection />
@@ -27,6 +31,7 @@ export default function Home() {
         <QuickStart />
       </main>
       <Footer />
+      <NewsletterPopup />
     </>
   );
 }
@@ -51,6 +56,10 @@ function Hero() {
           <HarnextPanel />
           <ContextEnginePanel />
         </div>
+
+        <Reveal className="d2">
+          <TrustedBy />
+        </Reveal>
       </div>
     </section>
   );

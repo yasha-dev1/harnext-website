@@ -7,7 +7,13 @@ import { GithubIcon } from "./icons";
 
 const GITHUB_URL = "https://github.com/QualityUnit/harnext";
 
-export default function Nav({ startHref = "#start" }: { startHref?: string }) {
+export default function Nav({
+  startHref = "#start",
+  startLabel = "Get started",
+}: {
+  startHref?: string;
+  startLabel?: string;
+}) {
   const [stuck, setStuck] = useState(false);
   const pathname = usePathname();
 
@@ -33,6 +39,7 @@ export default function Nav({ startHref = "#start" }: { startHref?: string }) {
           <Link href="/harnext" className={`has-dot${active("/harnext")}`}>harnext</Link>
           <Link href="/context-engine" className={`has-dot${active("/context-engine")}`}>Context Engine</Link>
           <Link href="/docs">Docs</Link>
+          <Link href="/webinars" className={pathname === "/webinars" ? "active" : undefined}>Webinars</Link>
         </nav>
         <span className="nav-spacer" />
         <a
@@ -45,7 +52,7 @@ export default function Nav({ startHref = "#start" }: { startHref?: string }) {
           <GithubIcon />
         </a>
         <a className="btn btn-ghost nav-demo" href="#">Book a call</a>
-        <a className="btn btn-amber" href={startHref}>Get started</a>
+        <a className="btn btn-amber" href={startHref}>{startLabel}</a>
       </div>
     </header>
   );

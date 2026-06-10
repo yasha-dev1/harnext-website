@@ -391,6 +391,7 @@ export function Footer() {
         <Link className="fl" href="/#start">Quick start</Link>
         <Link className="fl" href="/#opensource">Open source</Link>
         <Link className="fl" href="/docs">Docs</Link>
+        <Link className="fl" href="/webinars">Webinars</Link>
         <a
           className="fl"
           href="https://x.com/Yasha_br"
