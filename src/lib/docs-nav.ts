@@ -28,6 +28,8 @@ export const docsNav: NavGroup[] = [
       { title: "Client & configuration", href: "/docs/sdk/client" },
       { title: "Running the agent", href: "/docs/sdk/running-agents" },
       { title: "Tools", href: "/docs/sdk/tools" },
+      { title: "Background jobs", href: "/docs/sdk/background-jobs" },
+      { title: "Image input", href: "/docs/sdk/images" },
       { title: "Custom sandbox (Docker)", href: "/docs/sdk/sandbox" },
       { title: "Sessions & replays", href: "/docs/sdk/sessions" },
       { title: "Resuming sessions", href: "/docs/sdk/resume" },

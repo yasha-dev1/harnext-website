@@ -15,6 +15,28 @@ export type BlogPost = {
 /** Posts, newest first. The index page and each post route read from here. */
 export const POSTS: BlogPost[] = [
   {
+    slug: "background-jobs",
+    title: "Background jobs: run dev servers and watch builds without blocking the agent",
+    description:
+      "Long-running commands no longer freeze the agent. run_in_background returns a shell id immediately; bash_output streams the logs and kill_shell stops it — all visible in a live /bashes viewer.",
+    date: "2026-06-14",
+    dateLabel: "June 14, 2026",
+    author: "The harnext team",
+    readingTime: "6 min read",
+    tag: "Release",
+  },
+  {
+    slug: "image-input",
+    title: "Multimodal input: paste an image with Ctrl+V, or pass a URL from the SDK",
+    description:
+      "harnext now takes images. Press Ctrl+V to attach whatever's on your clipboard, or hand session.prompt() a URL, data URI, file path, or base64 — resolveImages() fetches and encodes the rest.",
+    date: "2026-06-14",
+    dateLabel: "June 14, 2026",
+    author: "The harnext team",
+    readingTime: "6 min read",
+    tag: "Release",
+  },
+  {
     slug: "sandbox-agent-shell",
     title: "Sandbox your AI agent's shell, keep its files on the host",
     description:

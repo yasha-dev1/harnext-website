@@ -60,6 +60,14 @@ export default function Page() {
         </tbody>
       </table>
 
+      <Callout type="note" title="Beyond the basics">
+        <code>bash</code> can run long commands in the background — see{" "}
+        <a href="/docs/sdk/background-jobs">Background jobs</a> for{" "}
+        <code>run_in_background</code>, <code>bash_output</code>, and{" "}
+        <code>kill_shell</code>. To send images to the model, see{" "}
+        <a href="/docs/sdk/images">Image input</a>.
+      </Callout>
+
       <H3>Selecting tools</H3>
       <p>
         Pass the <code>tools</code> option to enable a subset. A read-only agent,
