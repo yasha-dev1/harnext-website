@@ -15,6 +15,17 @@ export type BlogPost = {
 /** Posts, newest first. The index page and each post route read from here. */
 export const POSTS: BlogPost[] = [
   {
+    slug: "mid-run-steering",
+    title: "Steer the agent mid-run — no abort, no re-prompt",
+    description:
+      "Watch the agent head down the wrong path and you used to Ctrl-C, lose the run, and start over. Now you just keep typing: messages queue while it generates and inject at the next turn boundary — in the REPL and over headless stream-json.",
+    date: "2026-06-14",
+    dateLabel: "June 14, 2026",
+    author: "The harnext team",
+    readingTime: "6 min read",
+    tag: "Release",
+  },
+  {
     slug: "background-jobs",
     title: "Background jobs: run dev servers and watch builds without blocking the agent",
     description:

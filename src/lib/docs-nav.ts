@@ -27,6 +27,7 @@ export const docsNav: NavGroup[] = [
       { title: "Overview", href: "/docs/sdk/overview" },
       { title: "Client & configuration", href: "/docs/sdk/client" },
       { title: "Running the agent", href: "/docs/sdk/running-agents" },
+      { title: "Mid-run steering", href: "/docs/sdk/steering" },
       { title: "Tools", href: "/docs/sdk/tools" },
       { title: "Background jobs", href: "/docs/sdk/background-jobs" },
       { title: "Image input", href: "/docs/sdk/images" },
