@@ -39,6 +39,7 @@ export default function Nav({
           <Link href="/harnext" className={`has-dot${active("/harnext")}`}>harnext</Link>
           <Link href="/context-engine" className={`has-dot${active("/context-engine")}`}>Context Engine</Link>
           <Link href="/docs">Docs</Link>
+          <Link href="/blog" className={pathname?.startsWith("/blog") ? "active" : undefined}>Blog</Link>
           <Link href="/webinars" className={pathname === "/webinars" ? "active" : undefined}>Webinars</Link>
         </nav>
         <span className="nav-spacer" />
