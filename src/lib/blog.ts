@@ -15,6 +15,17 @@ export type BlogPost = {
 /** Posts, newest first. The index page and each post route read from here. */
 export const POSTS: BlogPost[] = [
   {
+    slug: "resumable-sessions",
+    title: "Resume any harnext conversation — from the CLI or the SDK",
+    description:
+      "harnext sessions used to end and take their context with them. Now every run is a durable, per-directory transcript you can pick back up — interactively with harnext --resume, or programmatically through @harnext/core.",
+    date: "2026-06-14",
+    dateLabel: "June 14, 2026",
+    author: "The harnext team",
+    readingTime: "7 min read",
+    tag: "Release",
+  },
+  {
     slug: "goal-mode-evaluator-loop",
     title: "Goal mode: the evaluator loop inside harnext",
     description:

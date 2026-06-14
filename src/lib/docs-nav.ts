@@ -29,6 +29,7 @@ export const docsNav: NavGroup[] = [
       { title: "Running the agent", href: "/docs/sdk/running-agents" },
       { title: "Tools", href: "/docs/sdk/tools" },
       { title: "Sessions & replays", href: "/docs/sdk/sessions" },
+      { title: "Resuming sessions", href: "/docs/sdk/resume" },
       { title: "Providers & models", href: "/docs/sdk/providers" },
       { title: "Skills", href: "/docs/sdk/skills" },
       { title: "MCP servers", href: "/docs/sdk/mcp" },

@@ -162,6 +162,13 @@ await agent.run("Try a different approach: use Drizzle instead");`,
         <code>.harnext</code> directory in CI). Transcripts redact known
         credential patterns; treat exported files as sensitive regardless.
       </Callout>
+
+      <Callout type="tip" title="Resuming from the CLI or @harnext/core">
+        Picking a run back up — <code>harnext --resume</code>, the{" "}
+        <code>createAgentSession</code> resume options, the per-directory JSONL store,
+        and session-management helpers — is covered in{" "}
+        <a href="/docs/sdk/resume">Resuming sessions</a>.
+      </Callout>
     </DocPage>
   );
 }
