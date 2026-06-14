@@ -15,6 +15,17 @@ export type BlogPost = {
 /** Posts, newest first. The index page and each post route read from here. */
 export const POSTS: BlogPost[] = [
   {
+    slug: "sandbox-agent-shell",
+    title: "Sandbox your AI agent's shell, keep its files on the host",
+    description:
+      "harnext's new pluggable command executor lets you run an agent's shell commands inside a per-worktree Docker container while file tools stay on the host — one small seam, with truncation, timeouts, streaming, abort, and background shells all intact.",
+    date: "2026-06-14",
+    dateLabel: "June 14, 2026",
+    author: "The harnext team",
+    readingTime: "7 min read",
+    tag: "Engineering",
+  },
+  {
     slug: "resumable-sessions",
     title: "Resume any harnext conversation — from the CLI or the SDK",
     description:
